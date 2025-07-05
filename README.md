@@ -1,6 +1,6 @@
-## ✋🎵 Hand-Gesture Controlled Buzzer using MediaPipe & Arduino
+## ✋🎵💡 Hand-Gesture Controlled Buzzer and LED using MediaPipe & Arduino
 
-This is a fun little project that uses **hand tracking** with a webcam to control a **buzzer’s pitch** on an Arduino — just by changing the distance between your **thumb and index finger**!
+This is a fun little project that uses **hand tracking** with a webcam to control a **buzzer’s pitch** and **LED intensity** on an Arduino — just by changing the distance between your **thumb and index finger**!
 
 It’s like playing a virtual theremin... but with your fingers ✨
 
@@ -13,7 +13,7 @@ It’s like playing a virtual theremin... but with your fingers ✨
 * Sends that distance value to **Arduino over Serial**.
 * The Arduino:
 
-  * **Maps the distance** to a **sound frequency**.
+  * **Maps the distance** to a **sound frequency** and **LED Brightness** mapping to PWM value.
   * Plays a tone using a **passive buzzer**.
   * Turns on an **LED** while buzzing.
 
@@ -27,7 +27,7 @@ Move too close or too far — the buzzer stops 🔇
 * **Python** (OpenCV, MediaPipe)
 * **Arduino UNO**
 * **Passive Buzzer**
-* **LED (optional but recommended)**
+* **LED**
 * **Serial Communication**
 
 ---
@@ -43,9 +43,9 @@ Move too close or too far — the buzzer stops 🔇
 2. **Arduino Side**:
 
    * Reads the value.
-   * Maps it to a frequency range (e.g., 20–2000 Hz).
+   * Maps it to a PWM signal intensity range (e.g., 0-255).
    * Generates a tone using PWM logic.
-   * Lights up pin 13 when buzzing.
+   * Lights up pin 9 when buzzes at pin 6 using analog signal.
 
 ---
 
@@ -77,7 +77,7 @@ Move too close or too far — the buzzer stops 🔇
 1. **Hardware**:
 
    * Connect buzzer to pin 7 and GND
-   * Connect LED to pin 13 (optional)
+   * Connect LED to pin 6 and GND
    * Upload `HandControlledFrequency.ino` to your Arduino
 
 2. **Python**:
